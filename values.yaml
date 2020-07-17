@@ -10,8 +10,8 @@ Treshold: "70"
 
 
 image:
-  repository: asia.gcr.io/polar-cargo-139301/simple_gin
-  tag: v1.0
+  repository: <private repository>
+  tag: <tag-version>
   pullPolicy: Always
 
 spec:
