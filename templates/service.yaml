@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "simple-chart-gin.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "simple-chart-gin.name" . }}
+    helm.sh/chart: {{ include "simple-chart-gin.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
+      protocol: TCP
+      name: {{ include "simple-chart-gin.fullname" . }}
+  selector:
+    app.kubernetes.io/name: {{ include "simple-chart-gin.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
