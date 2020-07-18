@@ -59,3 +59,7 @@ service:
 
 ```
 
+### sample command to install chart
+```sh
+helm install --name simpleflask ./simple-chart-flask/
+```
